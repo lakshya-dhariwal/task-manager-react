@@ -3,7 +3,7 @@ export type TaskSchema = {
   title: string;
   status: boolean;
   description?: string;
-  date?: Date;
+  date?: string;
 };
 export type AllTaskSchema = Array<TaskSchema>;
 

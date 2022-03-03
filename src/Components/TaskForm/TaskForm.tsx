@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { FormControl, Typography, TextField, Button } from "@mui/material";
-import { TaskSchema, AllTaskSchema, TasksStateProps } from "../../Models/Schema";
+import {
+  TaskSchema,
+  AllTaskSchema,
+  TasksStateProps,
+} from "../../Models/Schema";
 import { v4 as uuidv4 } from "uuid";
 
 const TaskForm: React.FC<TasksStateProps> = ({ tasks, setTasks }) => {
@@ -14,7 +18,6 @@ const TaskForm: React.FC<TasksStateProps> = ({ tasks, setTasks }) => {
     setTask({ ...task, id: uuidv4() });
     setTasks([...tasks, task]);
   };
-
   return (
     <>
       <FormControl variant="standard">
@@ -38,6 +41,17 @@ const TaskForm: React.FC<TasksStateProps> = ({ tasks, setTasks }) => {
           margin={"normal"}
           onChange={(e) => {
             setTask({ ...task, description: e.target.value });
+          }}
+        />
+        <TextField
+          label="Date"
+          type="date"
+          sx={{ width: 220 }}
+          InputLabelProps={{
+            shrink: true,
+          }}
+          onChange={(e) => {
+            setTask({ ...task, date: e.target.value });
           }}
         />
         <Button variant="contained" onClick={submitHandler}>
