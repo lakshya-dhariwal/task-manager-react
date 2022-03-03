@@ -1,19 +1,17 @@
-import React from "react";
-import "./App.css";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
+import { useState } from "react";
+import TaskForm from "./Components/TaskForm";
+import TaskList from "./Components/TaskList";
+import { AllTaskSchema } from "./Models/Schema";
 
-function App() {
+
+
+const App: React.FC = () => {
+  const [tasks, setTasks] = useState<AllTaskSchema>([]);
   return (
     <div className="App">
-      <AppBar position="fixed" color="primary">
-        <Toolbar>
-          <Typography variant="h6"></Typography>
-        </Toolbar>
-      </AppBar>
+      <TaskForm tasks={tasks} setTasks={setTasks}/>
+      <TaskList tasks={tasks} setTasks={setTasks} />
     </div>
   );
-}
-
+};
 export default App;
