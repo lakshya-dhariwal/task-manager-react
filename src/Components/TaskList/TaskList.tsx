@@ -1,5 +1,6 @@
 import Task from "./Task";
 import { TaskSchema, TasksStateProps } from "../../Models/Schema";
+import { Stack } from "@mui/material";
 
 const TaskList: React.FC<TasksStateProps> = ({ tasks, setTasks }: any) => {
   const handleComplete = (id: string) => {
@@ -22,17 +23,21 @@ const TaskList: React.FC<TasksStateProps> = ({ tasks, setTasks }: any) => {
   };
   return (
     <div>
-      {tasks?.map((task: any) => {
-        return (
-          <>
-            <Task
-              task={task}
-              handleComplete={handleComplete}
-              handleDelete={handleDelete}
-            />
-          </>
-        );
-      })}
+      <Stack flex={0} spacing={3}>
+        {tasks?.map((task: any) => {
+          if (task.title) {
+            return (
+              <>
+                <Task
+                  task={task}
+                  handleComplete={handleComplete}
+                  handleDelete={handleDelete}
+                />
+              </>
+            );
+          }
+        })}
+      </Stack>
     </div>
   );
 };

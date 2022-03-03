@@ -8,6 +8,9 @@ const theme = createTheme({
   palette: {
     primary: { main: "#003979" },
     secondary: { main: "#D60707" },
+    background: {
+      default: "#E8F3FE",
+    },
   },
 });
 
