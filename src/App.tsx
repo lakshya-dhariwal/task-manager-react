@@ -14,11 +14,11 @@ const App: React.FC = () => {
         direction="column"
         alignItems="center"
         justifyContent="center"
-        style={{ minHeight: "100vh" }}
+        style={{ minHeight: "50vh" }}
       >
-        <Grid item xs={3}>
-          <TaskForm tasks={tasks} setTasks={setTasks} />
-        </Grid>
+        {/* <Grid item xs={3}> */}
+        <TaskForm tasks={tasks} setTasks={setTasks} />
+        {/* </Grid> */}
       </Grid>
 
       <TaskList tasks={tasks} setTasks={setTasks} />

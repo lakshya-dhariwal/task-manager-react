@@ -4,7 +4,7 @@ import { Grid, Typography } from "@mui/material";
 
 const TaskList: React.FC<TasksStateProps> = ({ tasks, setTasks }: any) => {
   const handleComplete = (id: string) => {
-    const updatedTasks = tasks.map((task: TaskSchema) => {
+    const updatedTasks = tasks.forEach((task: TaskSchema) => {
       if (task.id === id) {
         return { ...task, status: !task.status };
       }
@@ -27,10 +27,10 @@ const TaskList: React.FC<TasksStateProps> = ({ tasks, setTasks }: any) => {
         variant="h5"
         color="primary"
         sx={{
-          "font-weight": "800",
+          "fontWeight": "800",
           display: "flex",
-          "flex-direction": "column",
-          "align-items": "center",
+          "flexDirection": "column",
+          "alignItems": "center",
         }}
       >
         Your Tasks
@@ -48,6 +48,7 @@ const TaskList: React.FC<TasksStateProps> = ({ tasks, setTasks }: any) => {
             return (
               <>
                 <Task
+                  key={task.id}
                   task={task}
                   handleComplete={handleComplete}
                   handleDelete={handleDelete}

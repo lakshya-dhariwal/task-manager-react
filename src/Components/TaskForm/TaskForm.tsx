@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import { FormControl, Typography, TextField, Button, Box } from "@mui/material";
-import {
-  TaskSchema,
-  TasksStateProps,
-} from "../../Models/Schema";
+import { TaskSchema, TasksStateProps } from "../../Models/Schema";
 import { v4 as uuidv4 } from "uuid";
 
 const TaskForm: React.FC<TasksStateProps> = ({ tasks, setTasks }) => {
@@ -25,8 +22,8 @@ const TaskForm: React.FC<TasksStateProps> = ({ tasks, setTasks }) => {
           sx={{
             width: 360,
             display: "flex",
-            "flex-direction": "column",
-            "align-items": "center",
+            flexDirection: "column",
+            alignItems: "center",
             margin: "1rem",
           }}
           paddingX={5}
@@ -35,11 +32,7 @@ const TaskForm: React.FC<TasksStateProps> = ({ tasks, setTasks }) => {
           justifyItems={"between"}
           boxShadow={"inherit"}
         >
-          <Typography
-            variant="h5"
-            color="primary"
-            sx={{ "font-weight": "800" }}
-          >
+          <Typography variant="h5" color="primary" sx={{ fontWeight: "800" }}>
             Task Manager
           </Typography>
           <TextField
@@ -65,7 +58,7 @@ const TaskForm: React.FC<TasksStateProps> = ({ tasks, setTasks }) => {
           <TextField
             label="Date"
             type="date"
-            sx={{ width: 360, "margin-top": 15 }}
+            sx={{ width: 360, marginTop: 2 }}
             InputLabelProps={{
               shrink: true,
             }}
@@ -75,7 +68,8 @@ const TaskForm: React.FC<TasksStateProps> = ({ tasks, setTasks }) => {
           />
           <Button
             size={"large"}
-            sx={{ "margin-top": 20 }}
+            sx={{ marginTop: 2 }}
+            fullWidth
             variant="contained"
             onClick={submitHandler}
           >
