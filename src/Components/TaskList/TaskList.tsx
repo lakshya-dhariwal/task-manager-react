@@ -27,10 +27,10 @@ const TaskList: React.FC<TasksStateProps> = ({ tasks, setTasks }: any) => {
         variant="h5"
         color="primary"
         sx={{
-          "fontWeight": "800",
+          fontWeight: "800",
           display: "flex",
-          "flexDirection": "column",
-          "alignItems": "center",
+          flexDirection: "column",
+          alignItems: "center",
         }}
       >
         Your Tasks
@@ -43,7 +43,7 @@ const TaskList: React.FC<TasksStateProps> = ({ tasks, setTasks }: any) => {
         alignContent="center"
         wrap="wrap"
       >
-        {tasks?.forEach((task: any) => {
+        {tasks?.map((task: any) => {
           if (task.title) {
             return (
               <>
@@ -56,6 +56,7 @@ const TaskList: React.FC<TasksStateProps> = ({ tasks, setTasks }: any) => {
               </>
             );
           }
+          return true;
         })}
       </Grid>
     </div>
