@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FormControl, Typography, TextField, Button } from "@mui/material";
+import { FormControl, Typography, TextField, Button, Box } from "@mui/material";
 import {
   TaskSchema,
   AllTaskSchema,
@@ -21,42 +21,68 @@ const TaskForm: React.FC<TasksStateProps> = ({ tasks, setTasks }) => {
   return (
     <>
       <FormControl variant="standard">
-        <Typography variant="h5" color="primary">
-          Task Manager
-        </Typography>
-        <TextField
-          label="Task Title"
-          margin={"normal"}
-          fullWidth
-          required
-          onChange={(e) => {
-            setTask({ ...task, title: e.target.value });
+        <Box
+          bgcolor={"#ffffff"}
+          sx={{
+            width: 360,
+            display: "flex",
+            "flex-direction": "column",
+            "align-items": "center",
+            margin: "1rem",
           }}
-        />
-        <TextField
-          label="Task Description"
-          variant="outlined"
-          multiline
-          minRows={4}
-          margin={"normal"}
-          onChange={(e) => {
-            setTask({ ...task, description: e.target.value });
-          }}
-        />
-        <TextField
-          label="Date"
-          type="date"
-          sx={{ width: 220 }}
-          InputLabelProps={{
-            shrink: true,
-          }}
-          onChange={(e) => {
-            setTask({ ...task, date: e.target.value });
-          }}
-        />
-        <Button variant="contained" onClick={submitHandler}>
-          Save Task
-        </Button>
+          paddingX={5}
+          paddingY={3}
+          alignContent={"center"}
+          justifyItems={"between"}
+          boxShadow={"inherit"}
+        >
+          <Typography
+            variant="h5"
+            color="primary"
+            sx={{ "font-weight": "800" }}
+          >
+            Task Manager
+          </Typography>
+          <TextField
+            label="Task Title"
+            margin={"normal"}
+            sx={{ width: 360 }}
+            required
+            onChange={(e) => {
+              setTask({ ...task, title: e.target.value });
+            }}
+          />
+          <TextField
+            label="Task Description"
+            variant="outlined"
+            multiline
+            minRows={4}
+            sx={{ width: 360 }}
+            margin={"normal"}
+            onChange={(e) => {
+              setTask({ ...task, description: e.target.value });
+            }}
+          />
+          <TextField
+            label="Date"
+            type="date"
+            sx={{ width: 360, "margin-top": 15 }}
+            InputLabelProps={{
+              shrink: true,
+            }}
+            onChange={(e) => {
+              setTask({ ...task, date: e.target.value });
+            }}
+          />
+          <Button
+            size={"large"}
+            sx={{ "margin-top": 20 }}
+            variant="contained"
+            onClick={submitHandler}
+          >
+            Save Task
+          </Button>
+        </Box>
       </FormControl>
     </>
   );

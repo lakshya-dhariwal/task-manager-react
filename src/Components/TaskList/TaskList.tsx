@@ -1,6 +1,6 @@
 import Task from "./Task";
 import { TaskSchema, TasksStateProps } from "../../Models/Schema";
-import { Stack } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 
 const TaskList: React.FC<TasksStateProps> = ({ tasks, setTasks }: any) => {
   const handleComplete = (id: string) => {
@@ -23,7 +23,26 @@ const TaskList: React.FC<TasksStateProps> = ({ tasks, setTasks }: any) => {
   };
   return (
     <div>
-      <Stack flex={0} spacing={3}>
+      <Typography
+        variant="h5"
+        color="primary"
+        sx={{
+          "font-weight": "800",
+          display: "flex",
+          "flex-direction": "column",
+          "align-items": "center",
+        }}
+      >
+        Your Tasks
+      </Typography>
+      <Grid
+        container
+        margin={5}
+        direction="row"
+        alignItems="center"
+        alignContent="center"
+        wrap="wrap"
+      >
         {tasks?.map((task: any) => {
           if (task.title) {
             return (
@@ -37,7 +56,7 @@ const TaskList: React.FC<TasksStateProps> = ({ tasks, setTasks }: any) => {
             );
           }
         })}
-      </Stack>
+      </Grid>
     </div>
   );
 };
