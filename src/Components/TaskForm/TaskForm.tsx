@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { FormControl, Typography, TextField, Button, Box } from "@mui/material";
 import {
   TaskSchema,
-  AllTaskSchema,
   TasksStateProps,
 } from "../../Models/Schema";
 import { v4 as uuidv4 } from "uuid";

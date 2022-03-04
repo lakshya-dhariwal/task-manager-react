@@ -55,6 +55,7 @@ const TaskList: React.FC<TasksStateProps> = ({ tasks, setTasks }: any) => {
               </>
             );
           }
+          return;
         })}
       </Grid>
     </div>
