@@ -43,7 +43,7 @@ const TaskList: React.FC<TasksStateProps> = ({ tasks, setTasks }: any) => {
         alignContent="center"
         wrap="wrap"
       >
-        {tasks?.map((task: any) => {
+        {tasks?.forEach((task: any) => {
           if (task.title) {
             return (
               <>
@@ -56,7 +56,6 @@ const TaskList: React.FC<TasksStateProps> = ({ tasks, setTasks }: any) => {
               </>
             );
           }
-          return;
         })}
       </Grid>
     </div>
