@@ -34,7 +34,7 @@ const Task: React.FC<Props> = ({ task, handleComplete, handleDelete }: any) => {
             size={"small"}
             onClick={() => handleComplete(task.id)}
           >
-            {task.status ? "Completed" : "Incomplete"}
+            {task.status ? "Incomplete" : "Complete"}
           </Button>
           <Button
             variant="contained"

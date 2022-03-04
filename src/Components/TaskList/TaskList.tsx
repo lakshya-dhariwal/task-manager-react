@@ -4,7 +4,7 @@ import { Grid, Typography } from "@mui/material";
 
 const TaskList: React.FC<TasksStateProps> = ({ tasks, setTasks }: any) => {
   const handleComplete = (id: string) => {
-    const updatedTasks = tasks.forEach((task: TaskSchema) => {
+    const updatedTasks = tasks.map((task: TaskSchema) => {
       if (task.id === id) {
         return { ...task, status: !task.status };
       }
